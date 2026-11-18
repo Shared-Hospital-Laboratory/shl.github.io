@@ -2,9 +2,9 @@
 title: The Team
 layout: teams
 permalink: /shl-team/
+section: "About us"
+heading: "Our team"
 ---
-
-# Our Team
 
 The dedicated SHL team comprises medical laboratory technologists, medical laboratory assistants, administrative staff, research coordinators, and medical and clinical microbiologists. Their collective efforts drive ongoing quality improvement initiatives, and ensure optimal service delivery and advisory support.
 

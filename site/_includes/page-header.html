@@ -1,0 +1,7 @@
+<header class="page-header">
+  <div class="container">
+    {% if page.section %}<p class="eyebrow">{{ page.section }}</p>{% endif %}
+    <h1 class="page-title">{{ page.heading | default: page.title }}</h1>
+    {% if page.lede %}<p class="lede">{{ page.lede }}</p>{% endif %}
+  </div>
+</header>

@@ -2,18 +2,65 @@
 layout: default
 bodyClass: "page-home"
 ---
-
-<div class="intro">
+<section class="hero">
   <div class="container">
-    <div class="row align-items-center">
-      <div class="col-12 col-md-7 col-lg-6">
-        {{ content }}
+    <div class="row g-5 align-items-center">
+      <div class="col-12 col-lg-6">
+        <p class="eyebrow">Toronto, Ontario</p>
+        <h1 class="hero-title">{{ page.heading }}</h1>
+        <p class="hero-lede">{{ page.lede }}</p>
+        <div class="hero-actions">
+          <a class="button" href="{{ '/shl-team/' | relative_url }}">Meet the team</a>
+          <a class="text-link" href="{{ '/contact-us/' | relative_url }}">Find us at Sunnybrook</a>
+        </div>
       </div>
-      {% if page.intro_image %}
-      <div class="col-12 col-md-5 col-lg-6">
-        <img alt="{{ page.intro_image_alt | default: page.title }}" class="intro-image shadow-two" src="{{ page.intro_image | relative_url }}" />
+      <div class="col-12 col-lg-6">
+        <img class="hero-image" alt="{{ page.intro_image_alt }}" src="{{ page.intro_image | relative_url }}" width="1050" height="1400" />
       </div>
-      {% endif %}
     </div>
   </div>
-</div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-12 col-lg-4">
+        <h2 class="section-title">What we test</h2>
+        <p>SHL is the largest hospital-based microbiology lab in Ontario, operating 24/7 with full lab automation.</p>
+      </div>
+      <div class="col-12 col-lg-8">
+        <ul class="service-list">
+          {% for s in page.services %}
+          <li><h3>{{ s.name }}</h3><p>{{ s.text }}</p></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <div class="col-12 col-lg-6 order-lg-2">
+        <div class="content">{{ content }}</div>
+      </div>
+      <div class="col-12 col-lg-6 order-lg-1">
+        <img class="feature-photo" src="{{ '/images/shl/lab-screens-and-techs.jpg' | relative_url }}" alt="Technologists working at the SHL automated microbiology line" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-tint">
+  <div class="container">
+    <h2 class="section-title">Member hospitals</h2>
+    <ul class="member-list">
+      <li>Scarborough Health Network</li>
+      <li>North York General Hospital</li>
+      <li>Michael Garron Hospital</li>
+      <li>Sunnybrook Health Sciences Centre</li>
+    </ul>
+    <a class="text-link" href="{{ '/our-partners/' | relative_url }}">All partners and client hospitals</a>
+  </div>
+</section>

@@ -1,18 +1,31 @@
-<div class="footer">
+<footer class="site-footer">
   <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="footer-inner">
-          <h2 class="footer-title">{{ site.title }}</h2>
-          <ul>
-            {% for item in site.data.menus.footer %}
-            <li class="{% if item.url == page.url %}active{% endif %}">
-              <a href="{{ item.url | relative_url }}">{{ item.name }}</a>
-            </li>
-            {% endfor %}
-          </ul>
-        </div>
+    <div class="row g-4">
+      <div class="col-12 col-md-5">
+        <p class="footer-name">{{ site.title }}</p>
+        <address>{{ site.data.contact.address | join: '<br>' }}</address>
+      </div>
+      <div class="col-6 col-md-3">
+        <p class="footer-heading">Contact</p>
+        <ul>
+          <li><a href="tel:{{ site.data.contact.phone | split: ' ' | first }}">{{ site.data.contact.phone }}</a></li>
+          <li><a href="mailto:{{ site.data.contact.email }}">{{ site.data.contact.email }}</a></li>
+          <li><a href="{{ site.data.contact.maps_url }}" target="_blank" rel="noopener">Directions</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-4">
+        <p class="footer-heading">Member hospitals</p>
+        <ul>
+          <li>Scarborough Health Network</li>
+          <li>North York General Hospital</li>
+          <li>Michael Garron Hospital</li>
+          <li>Sunnybrook Health Sciences Centre</li>
+        </ul>
       </div>
     </div>
+    <div class="footer-base">
+      <span>{{ site.data.seo.copyright_text }} {{ site.time | date: '%Y' }}</span>
+      <a href="{{ '/certification/' | relative_url }}">License &amp; Accreditation</a>
+    </div>
   </div>
-</div>
+</footer>

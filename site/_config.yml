@@ -7,10 +7,10 @@ description: >-
   General Hospital, Michael Garron Hospital and Sunnybrook Health Sciences Centre.
 
 logo:
-  mobile: "images/shl/logo.jpg"
+  mobile: "images/shl/logo.png"
   mobile_height: "40px"
   mobile_width: "79px"
-  desktop: "images/shl/logo.jpg"
+  desktop: "images/shl/logo.png"
   desktop_height: "48px"
   desktop_width: "95px"
 

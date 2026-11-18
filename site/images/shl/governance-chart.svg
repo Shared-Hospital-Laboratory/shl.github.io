@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 54 730 578" role="img" aria-labelledby="gov-title gov-desc" font-family="'Source Sans 3', 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title id="gov-title">SHL Governance</title>
+  <desc id="gov-desc">The Board of Directors oversees the Clinical Advisory, Operations, Planning and Priorities Committee, which oversees the SHL Quality Committee and the Safety, JOHSC committee.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8a94a6"/>
+    </marker>
+  </defs>
+
+
+  <!-- Board of Directors -->
+  <rect rx="6" x="34" y="68" width="702" height="150" fill="#14213d"/>
+  <text x="385" y="132" text-anchor="middle" font-size="36" fill="#fff">Board of Directors</text>
+  <text x="385" y="165" text-anchor="middle" font-size="16" fill="#fff">Each member hospital has 2 representatives;</text>
+  <text x="385" y="187" text-anchor="middle" font-size="16" fill="#fff">Chair: Chief of Laboratory Medicine, Member Hospital (rotating 2–3 yr. term)</text>
+
+  <line x1="385" y1="218" x2="385" y2="290" stroke="#8a94a6" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Committee -->
+  <rect rx="6" x="34" y="294" width="702" height="150" fill="#1f47c2"/>
+  <text x="385" y="352" text-anchor="middle" font-size="20" font-weight="700" fill="#fff">Clinical Advisory, Operations, Planning and Priorities Committee</text>
+  <text x="385" y="381" text-anchor="middle" font-size="16" fill="#fff">Member/Client Admin. Director of Labs, SHL Management, Microbiologists</text>
+  <text x="385" y="403" text-anchor="middle" font-size="16" fill="#fff">Chair: SHL Medical Director</text>
+
+  <polyline points="385,444 385,465 166,465 166,500" fill="none" stroke="#8a94a6" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <polyline points="385,465 604,465 604,500" fill="none" stroke="#8a94a6" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- Sub-committees -->
+  <rect rx="6" x="34" y="504" width="265" height="114" fill="#e8eefc" stroke="#1f47c2" stroke-width="1.5"/>
+  <text x="166.5" y="568" text-anchor="middle" font-size="20" font-weight="700" fill="#14213d">SHL Quality Committee</text>
+  <rect rx="6" x="471" y="504" width="265" height="114" fill="#e8eefc" stroke="#1f47c2" stroke-width="1.5"/>
+  <text x="603.5" y="568" text-anchor="middle" font-size="20" font-weight="700" fill="#14213d">Safety, JOHSC</text>
+</svg>

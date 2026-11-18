@@ -1,3 +1,9 @@
 email: 'ibabasa@shn.ca'
 phone: '416-635-2450 ext 61836'
 contact_button_link: '/contact-us/'
+address:
+  - 'H-wing, Basement'
+  - 'Sunnybrook Health Sciences Centre'
+  - '60 Veterans Hill Trail'
+  - 'Toronto, ON M4N 3M5'
+maps_url: 'https://www.google.com/maps/dir/?api=1&destination=60+Veterans+Hill+Trail,+Toronto,+ON+M4N+3M5'

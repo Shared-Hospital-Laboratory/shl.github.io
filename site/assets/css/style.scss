@@ -6,10 +6,10 @@
 $primary: #3366ff;
 $primary-dark: #1f47c2;
 $secondary: #7a9cff;
-$black: #2f2f41;
+$black: #1b2333;
 $white: #ffffff;
-$white-offset: #f3f6ff;
-$steel: #5c5a5a;
+$white-offset: #f4f6fa;
+$steel: #4b5565;
 
 // Links
 $link-color: #2453e0;
@@ -18,8 +18,8 @@ $link-hover-color: $primary-dark;
 $link-hover-decoration: underline;
 
 // Fonts
-$font-family-base: Helvetica, Arial, sans-serif, -apple-system;
-$font-family-heading: "Playfair Display", serif, -apple-system;
+$font-family-base: "Source Sans 3", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+$font-family-heading: "Source Serif 4", Georgia, "Times New Roman", serif;
 
 // Footer
 $footer-background-color: $primary-dark;
@@ -86,14 +86,11 @@ $sub-footer-text-color: $white;
 @import "components/type";
 @import "components/page";
 @import "components/header";
-@import "components/footer";
-@import "components/sub-footer";
 @import "components/logo";
 @import "components/main-menu";
 @import "components/main-menu-mobile";
 @import "components/hamburger";
 @import "components/buttons";
-@import "components/call";
 @import "components/title";
 @import "components/content";
 @import "components/intro";
@@ -110,11 +107,9 @@ $sub-footer-text-color: $white;
 @import "pages/page-shl";
 
 body {
-  font-size: 16px;
-  line-height: 1.2;
+  font-size: 17px;
+  line-height: 1.6;
   font-family: $font-family-base;
-  @include media-breakpoint-up(md) {
-    font-size: 16px;
-    line-height: 1.3;
-  }
+  color: $black;
+  -webkit-font-smoothing: antialiased;
 }

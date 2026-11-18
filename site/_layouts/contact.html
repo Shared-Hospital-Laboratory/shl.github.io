@@ -1,17 +1,24 @@
 ---
-title: Contact
 layout: default
 bodyClass: "page-contact"
 ---
-
-<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
-    <div class="row justify-content-start">
-        <div class="col-12 col-md-8">
-            <div class="service service-single">
-                <h1 class="title">{{page.title}}</h1>
-                {% include call.html show_button=false %}
-                <div class="content mt-4">{{content}}</div>
-            </div>
-        </div>
+{% include page-header.html %}
+<div class="container section">
+  <div class="row g-5">
+    <div class="col-12 col-lg-4">
+      <div class="contact-card">
+        <h2 class="contact-card-title">Shared Hospital Laboratory</h2>
+        <address>{{ site.data.contact.address | join: '<br>' }}</address>
+        <dl>
+          <dt>Telephone</dt><dd><a href="tel:{{ site.data.contact.phone | split: ' ' | first }}">{{ site.data.contact.phone }}</a></dd>
+          <dt>Email</dt><dd><a href="mailto:{{ site.data.contact.email }}">{{ site.data.contact.email }}</a></dd>
+        </dl>
+        <a class="button" href="{{ site.data.contact.maps_url }}" target="_blank" rel="noopener">Directions in Google Maps</a>
+        <a class="text-link" href="https://sunnybrook.ca/content/?page=parking" target="_blank" rel="noopener">Sunnybrook parking information</a>
+      </div>
     </div>
+    <div class="col-12 col-lg-8">
+      <div class="content">{{ content }}</div>
+    </div>
+  </div>
 </div>

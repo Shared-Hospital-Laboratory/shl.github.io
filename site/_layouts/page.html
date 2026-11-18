@@ -2,14 +2,11 @@
 layout: default
 bodyClass: "page-basic"
 ---
-
-<div class="container pb-6 pt-6 pt-md-8 pb-md-10">
-  <div class="row justify-content-center">
+{% include page-header.html %}
+<div class="container section">
+  <div class="row">
     <div class="col-12 {{ page.column | default: 'col-lg-10' }}">
-      <div class="service service-single">
-        {% unless page.hide_title %}<h1 class="title">{{ page.title }}</h1>{% endunless %}
-        <div class="content">{{ content }}</div>
-      </div>
+      <div class="content">{{ content }}</div>
     </div>
   </div>
 </div>
