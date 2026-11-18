@@ -1,0 +1,239 @@
+// Site-specific styles for the Shared Hospital Laboratory site
+
+.shadow-two {
+  box-shadow: 0 4px 24px rgba(20, 20, 43, 0.12);
+  border-radius: 4px;
+}
+.img-full {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto 2rem;
+}
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 2rem;
+}
+
+// Home hero: an ordinary column image instead of the theme's oversized absolute illustration
+.page-home .intro {
+  padding-top: 40px;
+  padding-bottom: 60px;
+  @include media-breakpoint-up(md) {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+  .intro-image {
+    margin: 30px 0 0;
+    max-height: 640px;
+    object-fit: cover;
+    @include media-breakpoint-up(md) {
+      margin-top: 0;
+    }
+  }
+  p {
+    font-size: 1.05rem;
+    @include media-breakpoint-up(md) {
+      width: 100%;
+    }
+  }
+}
+
+// Header / dropdown menu
+.header .logo img,
+.logo-mobile img {
+  object-fit: contain;
+}
+.main-menu > ul {
+  margin: 0;
+  > li > a,
+  > li > .submenu-toggle {
+    color: $black;
+  }
+  > li > a:hover {
+    color: $primary;
+  }
+  > li.active > a,
+  > li.active > .submenu-toggle {
+    color: $primary;
+    font-weight: bold;
+  }
+}
+.main-menu .has-children {
+  position: relative;
+  .submenu-toggle {
+    padding: 10px 12px;
+    background: none;
+    border: 0;
+    font: inherit;
+    font-size: 1rem;
+    cursor: pointer;
+    &::after {
+      content: "";
+      display: inline-block;
+      margin-left: 6px;
+      vertical-align: 3px;
+      border: 4px solid transparent;
+      border-top-color: currentColor;
+      border-bottom: 0;
+    }
+    &:hover {
+      color: $primary;
+    }
+  }
+  .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 30;
+    min-width: 220px;
+    margin: 0;
+    padding: 8px 0;
+    list-style: none;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 8px 24px rgba(20, 20, 43, 0.15);
+    li a {
+      display: block;
+      padding: 8px 18px;
+      color: $black;
+      text-decoration: none;
+      &:hover {
+        background: $white-offset;
+        color: $primary;
+      }
+    }
+    li.active a {
+      color: $primary;
+      font-weight: bold;
+    }
+  }
+  &:hover .submenu,
+  &:focus-within .submenu,
+  &.open .submenu {
+    display: block;
+  }
+}
+
+// Team grid
+.page-teams .intro-small {
+  padding-top: 60px;
+  p {
+    width: 100%;
+  }
+}
+.team-card {
+  height: 100%;
+  padding: 24px;
+  text-align: center;
+  background: $white-offset;
+  border-radius: 4px;
+  .team-card-image {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: $secondary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+  .team-card-initials {
+    font-family: $font-family-heading;
+    font-size: 48px;
+    color: #ffffff;
+  }
+  .team-card-name {
+    margin: 0 0 4px;
+    font-size: 22px;
+  }
+  .team-card-role {
+    margin: 0 0 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: $steel;
+  }
+  .team-card-email {
+    font-size: 14px;
+    word-break: break-all;
+  }
+}
+
+// News
+.news-banner,
+.news-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.news-banner {
+  max-height: 460px;
+  object-fit: cover;
+}
+.news-image {
+  max-height: 480px;
+  object-fit: cover;
+}
+.news-title {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+.news-subtitle {
+  font-weight: bold;
+  color: $steel;
+}
+.news-body {
+  margin: 16px 0 24px;
+  line-height: 1.6;
+}
+.news-video-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.video-embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+  }
+}
+
+// Gallery / contact
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.contact-image {
+  max-width: 100%;
+  width: 509px;
+  height: auto;
+  border-radius: 4px;
+}
+.sub-footer-inner {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.logo-mobile {
+  width: 79px;
+}

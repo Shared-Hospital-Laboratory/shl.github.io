@@ -1,0 +1,36 @@
+---
+layout: default
+bodyClass: "page-teams"
+---
+
+<div class="intro intro-small">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-lg-9">
+        {{ content }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container pb-10">
+  <div class="row">
+    {% assign members = site.team | sort: "weight" %}
+    {% for member in members %}
+    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+      <div class="team-card">
+        <div class="team-card-image">
+          {% if member.image %}
+          <img alt="{{ member.title }}" src="{{ member.image | relative_url }}" loading="lazy" />
+          {% else %}
+          <span class="team-card-initials" aria-hidden="true">{% assign parts = member.title | split: ' ' %}{{ parts.first | slice: 0 }}{{ parts.last | slice: 0 }}</span>
+          {% endif %}
+        </div>
+        <h2 class="team-card-name">{{ member.title }}</h2>
+        <p class="team-card-role">{{ member.jobtitle }}</p>
+        {% if member.email %}<a class="team-card-email" href="mailto:{{ member.email }}">{{ member.email }}</a>{% endif %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>

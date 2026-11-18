@@ -1,0 +1,42 @@
+---
+layout: default
+bodyClass: "page-news"
+---
+
+{% if page.banner %}
+<div class="container pt-6">
+  <img class="news-banner shadow-two" alt="{{ page.banner_alt }}" src="{{ page.banner | relative_url }}" />
+</div>
+{% endif %}
+
+{% for item in site.data.news %}
+<div class="strip{% cycle '', ' strip-grey' %}">
+  <div class="container pt-6 pb-6 pt-md-8 pb-md-8">
+    <div class="row align-items-center news-item">
+      {% if item.image %}
+      <div class="col-12 col-md-5 mb-4 mb-md-0 {% cycle 'order-md-1', 'order-md-2' %}">
+        <img class="news-image shadow-two" alt="{{ item.image_alt | default: item.title }}" src="{{ item.image | relative_url }}" loading="lazy" />
+      </div>
+      {% endif %}
+      <div class="col-12 col-md-7 {% cycle 'order-md-2', 'order-md-1' %}">
+        <h2 class="news-title">{{ item.title }}</h2>
+        {% if item.subtitle %}<p class="news-subtitle">{{ item.subtitle }}</p>{% endif %}
+        <div class="news-body">{{ item.body | markdownify }}</div>
+        {% if item.link %}<a class="button" href="{{ item.link }}" target="_blank" rel="noopener">Visit Site</a>{% endif %}
+      </div>
+    </div>
+    {% if item.youtube %}
+    <div class="row justify-content-center mt-6">
+      <div class="col-12 col-lg-9">
+        <h3 class="news-video-title">{{ item.youtube_title }}</h3>
+        <div class="video-embed">
+          <iframe src="https://www.youtube-nocookie.com/embed/{{ item.youtube }}?rel=0" title="{{ item.youtube_title }}" frameborder="0" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endfor %}
+
+{{ content }}

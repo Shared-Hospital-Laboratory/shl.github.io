@@ -1,0 +1,19 @@
+---
+layout: default
+bodyClass: "page-home"
+---
+
+<div class="intro">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-md-7 col-lg-6">
+        {{ content }}
+      </div>
+      {% if page.intro_image %}
+      <div class="col-12 col-md-5 col-lg-6">
+        <img alt="{{ page.intro_image_alt | default: page.title }}" class="intro-image shadow-two" src="{{ page.intro_image | relative_url }}" />
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

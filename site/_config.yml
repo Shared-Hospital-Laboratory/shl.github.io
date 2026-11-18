@@ -1,0 +1,35 @@
+baseurl: ''
+permalink: pretty
+title: 'Shared Hospital Laboratory'
+description: >-
+  Shared Hospital Laboratory (SHL) is the largest hospital-based microbiology
+  lab in Ontario, a collaboration between Scarborough Health Network, North York
+  General Hospital, Michael Garron Hospital and Sunnybrook Health Sciences Centre.
+
+logo:
+  mobile: "images/shl/logo.jpg"
+  mobile_height: "40px"
+  mobile_width: "79px"
+  desktop: "images/shl/logo.jpg"
+  desktop_height: "48px"
+  desktop_width: "95px"
+
+collections:
+  team:
+    output: false
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - LICENSE
+  - README.md
+  - netlify.toml

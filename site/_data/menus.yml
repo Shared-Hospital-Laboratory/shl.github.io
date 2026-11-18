@@ -1,0 +1,38 @@
+main:
+  - name: "Home"
+    url: "/"
+    weight: 1
+  - name: "SHL Governance"
+    url: "/shl-governance/"
+    weight: 2
+  - name: "About us"
+    weight: 3
+    children:
+      - name: "The Team"
+        url: "/shl-team/"
+      - name: "Our Partners"
+        url: "/our-partners/"
+      - name: "Our History"
+        url: "/time-line/"
+      - name: "License & Accreditation"
+        url: "/certification/"
+      - name: "SHL In Pictures"
+        url: "/shl-in-pictures/"
+  - name: "News"
+    url: "/news/"
+    weight: 4
+  - name: "Contact us"
+    url: "/contact-us/"
+    weight: 5
+
+footer:
+  - name: "Home"
+    url: "/"
+  - name: "SHL Governance"
+    url: "/shl-governance/"
+  - name: "The Team"
+    url: "/shl-team/"
+  - name: "News"
+    url: "/news/"
+  - name: "Contact us"
+    url: "/contact-us/"
