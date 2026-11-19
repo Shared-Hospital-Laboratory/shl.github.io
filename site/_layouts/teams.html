@@ -14,7 +14,7 @@ bodyClass: "page-teams"
           {% if member.image %}
           <img alt="" src="{{ member.image | relative_url }}" loading="lazy" />
           {% else %}
-          <span class="team-card-initials" aria-hidden="true">{% assign parts = member.title | split: ' ' %}{{ parts.first | slice: 0 }}{{ parts.last | slice: 0 }}</span>
+          <img alt="" src="{{ '/images/shl/team-placeholder.svg' | relative_url }}" />
           {% endif %}
         </div>
         <div class="team-card-body">

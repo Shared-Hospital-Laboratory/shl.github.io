@@ -1,0 +1,39 @@
+# name: use "|" to mark where the name breaks onto its second line.
+members:
+  - name: "Sunnybrook Health|Sciences Centre"
+    logo: "images/shl/partners/sunnybrook.jpg"
+    url: "https://sunnybrook.ca/"
+    details:
+      - "Academic teaching centre (University of Toronto)"
+      - "Canada's largest trauma centre"
+      - "North Central Toronto"
+  - name: "North York|General Hospital"
+    logo: "images/shl/partners/nygh.jpg"
+    url: "https://www.nygh.on.ca/"
+    details:
+      - "Community teaching hospital (University of Toronto)"
+      - "North Central Toronto"
+  - name: "Scarborough|Health Network"
+    logo: "images/shl/partners/shn.jpg"
+    url: "https://www.shn.ca/"
+    details:
+      - "Network of three hospitals in East Toronto: Scarborough General, Birchmount and Centenary"
+      - "Community teaching hospital (University of Toronto)"
+  - name: "Michael Garron|Hospital"
+    logo: "images/shl/partners/mgh.jpg"
+    url: "https://www.tehn.ca/"
+    details:
+      - "Toronto East Health Network"
+      - "Community teaching hospital (University of Toronto)"
+      - "East Central Toronto"
+clients:
+  - name: "Muskoka Algonquin|Healthcare"
+    logo: "images/shl/partners/mahc.jpg"
+    url: "https://www.mahc.ca/"
+    details:
+      - "Network of two community hospitals in Huntsville and Bracebridge, Ontario"
+  - name: "Orillia Soldiers'|Memorial Hospital"
+    logo: "images/shl/partners/osmh.jpg"
+    url: "https://www.osmh.on.ca/"
+    details:
+      - "Community hospital in Orillia, Ontario"

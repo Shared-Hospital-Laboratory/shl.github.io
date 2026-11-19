@@ -1,0 +1,6 @@
+<li class="partner-card">
+  <div class="partner-logo"><img src="{{ include.p.logo | relative_url }}" alt="{{ include.p.name | replace: '|', ' ' }} logo" loading="lazy" /></div>
+  <h3>{{ include.p.name | replace: '|', '<br>' }}</h3>
+  <ul>{% for d in include.p.details %}<li>{{ d }}</li>{% endfor %}</ul>
+  <a class="text-link" href="{{ include.p.url }}" target="_blank" rel="noopener">Website</a>
+</li>

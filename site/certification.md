@@ -7,7 +7,7 @@ section: "About us"
 
 SHL’s key certifications include a Ministry of Health Laboratory License, accreditation with Accreditation Canada Diagnostics (ACD), and compliance with ISO 15189 Plus standards.
 
-<img class="accreditation-logos" src="{{ '/images/shl/accreditation.png' | relative_url }}" alt="Accreditation Canada Diagnostics, ISO 15189 Plus accredited medical laboratory, and ILAC-MRA logos" width="452" height="148">
+<img class="accreditation-logos" src="{{ '/images/shl/accreditation.jpg' | relative_url }}" alt="Accreditation Canada Diagnostics, ISO 15189 Plus accredited medical laboratory, and ILAC-MRA logos" width="1208" height="498">
 
 <p class="button-row">
   <a class="button" href="{{ '/docs/iso-certificate-2023.pdf' | relative_url }}">Accreditation</a>

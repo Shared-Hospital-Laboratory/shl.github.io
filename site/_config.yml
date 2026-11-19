@@ -1,5 +1,19 @@
 baseurl: ''
 permalink: pretty
+
+# News posts live in _posts/ and are served at /news/YEAR/slug/
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /news/:year/:title/
+  - scope:
+      path: ""
+      type: "reports"
+    values:
+      layout: "report"
 title: 'Shared Hospital Laboratory'
 description: >-
   Shared Hospital Laboratory (SHL) is the largest hospital-based microbiology
@@ -17,6 +31,9 @@ logo:
 collections:
   team:
     output: false
+  reports:
+    output: true
+    permalink: /genomics/reports/:name/
 
 sass:
   style: compressed
@@ -30,6 +47,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - LICENSE.md
+  - reports/README.md
   - LICENSE
   - README.md
   - netlify.toml

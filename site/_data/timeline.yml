@@ -1,0 +1,42 @@
+# One entry per year, oldest first. Each event is one line on the Our History page.
+# photos: round thumbnails (images/shl/timeline/); logos: partner logos (images/shl/partners/)
+- year: 1997
+  events:
+    - "SHL founded by Scarborough Health Network and North York General Hospital"
+  logos: [shn, nygh]
+- year: 2008
+  events:
+    - "Laboratory relocates to the NYGH Branson site"
+    - "Michael Garron Hospital (Toronto East Health Network) joins"
+  photos: [branson]
+  logos: [mgh]
+- year: 2011
+  events:
+    - "Expansion to molecular testing"
+  photos: [dna]
+- year: 2020
+  events:
+    - "Sunnybrook Health Sciences Centre joins"
+    - "Laboratory relocates to Sunnybrook"
+  photos: [sunnybrook-campus]
+  logos: [sunnybrook]
+- year: 2021
+  events:
+    - "Epic launched"
+    - "P-wing completed"
+  photos: [p-wing]
+- year: 2022
+  events:
+    - "BD Kiestra total lab automation (TLA) implemented"
+    - "Expansion to genomics"
+  photos: [kiestra, genomics]
+- year: 2023
+  events:
+    - "SHL begins operating 24/7"
+    - "Orillia Soldiers' Memorial Hospital and Muskoka Algonquin Healthcare join as client hospitals"
+  logos: [osmh, mahc]
+- year: 2024
+  events:
+    - "Blood culture testing transitions to SHL"
+    - "UCA MRSA apps fully implemented"
+  photos: [blood-culture, ai]

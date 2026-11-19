@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CPE genomic surveillance (placeholder)</title>
+<script src="../assets/js/vendor/plotly.min.js"></script>
+<style>
+  html, body { margin: 0; font-family: "Source Sans 3", system-ui, sans-serif; color: #1b2333; background: #fff; }
+  .note { margin: 12px 16px 0; padding: 8px 12px; background: #fff4d6; border-left: 4px solid #e0a800; font-size: 14px; }
+  .plot { width: 100%; height: 440px; }
+</style>
+</head>
+<body>
+<p class="note">Placeholder report: the numbers below are synthetic and for layout testing only.</p>
+<div id="by-gene" class="plot"></div>
+<div id="by-species" class="plot"></div>
+<script>
+  var months = ["2025-01","2025-02","2025-03","2025-04","2025-05","2025-06","2025-07","2025-08","2025-09","2025-10","2025-11","2025-12"];
+  var genes = {
+    "KPC":    [6, 5, 7, 8, 6, 9, 7, 8, 10, 9, 8, 11],
+    "NDM":    [4, 6, 5, 5, 7, 6, 8, 7, 6, 8, 9, 7],
+    "OXA-48": [3, 2, 4, 3, 5, 4, 3, 5, 4, 6, 5, 6],
+    "VIM":    [1, 0, 1, 2, 1, 1, 2, 1, 0, 1, 2, 1]
+  };
+  var colors = ["#3366ff", "#1f47c2", "#7fa0ff", "#9aa3b2"];
+  var layout = { barmode: "stack", margin: { t: 48, r: 16, b: 48, l: 56 },
+    font: { family: "Source Sans 3, system-ui, sans-serif", color: "#1b2333" },
+    legend: { orientation: "h", y: -0.18 }, yaxis: { title: "Isolates" } };
+  Plotly.newPlot("by-gene", Object.keys(genes).map(function (g, i) {
+    return { type: "bar", name: g, x: months, y: genes[g], marker: { color: colors[i] } };
+  }), Object.assign({}, layout, { title: "Carbapenemase-producing isolates by gene, per month" }), { responsive: true, displaylogo: false });
+
+  Plotly.newPlot("by-species", [{
+    type: "bar", orientation: "h",
+    y: ["Klebsiella pneumoniae", "Escherichia coli", "Enterobacter cloacae complex", "Citrobacter freundii", "Other"],
+    x: [58, 41, 27, 12, 9], marker: { color: "#3366ff" }
+  }], Object.assign({}, layout, { title: "Isolates by species, 2025", barmode: "group",
+    yaxis: { autorange: "reversed", automargin: true }, xaxis: { title: "Isolates" } }), { responsive: true, displaylogo: false });
+</script>
+</body>
+</html>

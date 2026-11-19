@@ -1,0 +1,37 @@
+# Who counts as an SHL team member on the Publications page, and how to find their papers.
+#   team:   the file name in _team/ (without .md)
+#   names:  how the person appears in author lists (Surname Initials), used to highlight them
+#   query:  a Europe PMC author search (https://europepmc.org/searchsyntax)
+# Only papers listing "Shared Hospital Laboratory" in an author affiliation are included
+# (the script adds that filter to every query).
+# After editing, run:  python3 scripts/update_publications.py
+- team: finlay-maguire
+  names: ["Maguire F"]
+  query: 'AUTHORID:"0000-0002-1203-9514" OR AUTH:"Maguire F"'
+- team: nicholas-waglechner
+  names: ["Waglechner N"]
+  query: 'AUTH:"Waglechner N"'
+- team: robert-kozak
+  names: ["Kozak R", "Kozak RA"]
+  query: 'AUTH:"Kozak R" OR AUTH:"Kozak RA"'
+- team: samira-mubareka
+  names: ["Mubareka S"]
+  query: 'AUTH:"Mubareka S"'
+- team: kevin-katz
+  names: ["Katz K", "Katz KC"]
+  query: 'AUTH:"Katz K" OR AUTH:"Katz KC"'
+- team: christie-vermeiren
+  names: ["Vermeiren C"]
+  query: 'AUTH:"Vermeiren C"'
+- team: xena-li
+  names: ["Li XX", "Li X"]
+  query: 'AUTH:"Li XX" OR AUTH:"Li X"'
+- team: patryk-aftanas
+  names: ["Aftanas P"]
+  query: 'AUTH:"Aftanas P"'
+- team: marilyn-spagnoli
+  names: ["Spagnoli M"]
+  query: 'AUTH:"Spagnoli M"'
+- team: tanvir-pathan
+  names: ["Pathan T"]
+  query: 'AUTH:"Pathan T"'

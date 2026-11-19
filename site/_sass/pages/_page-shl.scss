@@ -391,12 +391,6 @@ a {
       object-position: center 20%;
     }
   }
-  .team-card-initials {
-    font-family: $font-family-heading;
-    font-size: 44px;
-    font-weight: 600;
-    color: $primary-dark;
-  }
   .team-card-name {
     margin: 0 0 2px;
     font-size: 20px;
@@ -415,46 +409,85 @@ a {
 }
 
 // ---------- News ----------
-.news-banner-wrap {
-  margin: 0 0 24px;
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  margin-bottom: 8px;
 }
-.news-banner {
-  display: block;
-  width: 100%;
-  height: 380px;
-  object-fit: cover;
-  border-radius: $radius;
-}
-.news-item {
-  padding: 40px 0;
-  border-bottom: 1px solid $rule;
-  &:last-of-type {
-    border-bottom: 0;
+.news-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-top: 16px;
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-.news-image {
+.news-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+    h3 {
+      color: $primary-dark;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
+    img {
+      transform: scale(1.03);
+    }
+  }
+  .news-card-image {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border-radius: $radius;
+    margin-bottom: 16px;
+    background: $white-offset;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+  }
+  time {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: $primary-dark;
+  }
+  h3 {
+    margin: 0 0 8px;
+    font-size: 21px;
+    line-height: 1.3;
+  }
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+}
+.post-image {
   display: block;
   width: 100%;
   height: auto;
-  max-height: 460px;
-  object-fit: contain;
   border-radius: $radius;
 }
-.news-title {
-  font-size: 26px;
-  line-height: 1.25;
-  margin-bottom: 8px;
-}
-.news-subtitle {
-  margin-bottom: 0;
-  font-weight: 600;
-  color: $primary-dark;
-}
-.news-body {
-  margin: 14px 0 18px;
-  p:last-child {
-    margin-bottom: 0;
+.post-back {
+  margin-top: 48px;
+  .back::after {
+    content: "";
   }
+  .back::before {
+    content: "\2190  ";
+  }
+}
+.page-post .eyebrow a {
+  color: inherit;
 }
 .video-embed {
   position: relative;
@@ -544,7 +577,7 @@ a {
 .content .accreditation-logos {
   display: block;
   width: 100%;
-  max-width: 400px;
+  max-width: 480px;
   height: auto;
   margin: 2rem 0 1rem;
   border-radius: 0;
@@ -599,5 +632,376 @@ a {
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.15);
     font-size: 14px;
+  }
+}
+
+// ---------- Timeline ----------
+.content .timeline {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    bottom: 8px;
+    left: 9px;
+    width: 2px;
+    background: $rule;
+  }
+}
+.content .timeline-entry {
+  position: relative;
+  list-style: none;
+  margin: 0 !important;
+  padding: 0 0 36px 44px;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid $primary;
+  }
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+.timeline-year {
+  display: block;
+  margin-bottom: 6px;
+  font-family: $font-family-heading;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.1;
+  color: $black;
+}
+.content .timeline-events {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    margin: 0 0 4px;
+    color: $steel;
+  }
+}
+
+// ---------- Partners ----------
+.content .partner-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin: 0 0 48px;
+  padding: 0;
+  list-style: none;
+  @include media-breakpoint-up(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.content .partner-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 24px;
+  border: 1px solid $rule;
+  border-radius: $radius;
+  .partner-logo {
+    display: flex;
+    align-items: center;
+    height: 96px;
+    margin-bottom: 20px;
+    img {
+      max-height: 96px;
+      max-width: 100%;
+      width: auto;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+  h3 {
+    margin: 0 0 8px;
+    font-family: $font-family-heading;
+    font-size: 19px;
+    font-weight: 600;
+  }
+  ul {
+    flex: 1;
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+    li {
+      margin: 0 0 4px;
+      font-size: 15px;
+      line-height: 1.45;
+    }
+  }
+  .text-link {
+    align-self: flex-start;
+    text-decoration: none;
+  }
+}
+
+// ---------- Genomics ----------
+.content .service-list {
+  margin-bottom: 8px;
+  li {
+    margin: 0;
+    list-style: none;
+    h3 {
+      margin-top: 0;
+      font-family: $font-family-heading;
+      font-weight: 600;
+    }
+  }
+}
+.content .people-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    line-height: 1.45;
+  }
+  img {
+    width: 72px;
+    height: 72px;
+    margin: 0;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+  }
+  strong {
+    color: $black;
+    font-weight: 600;
+  }
+}
+.content .pub-list {
+  margin: 0 0 24px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid $rule;
+  li {
+    margin: 0;
+    padding: 16px 0;
+    border-bottom: 1px solid $rule;
+  }
+  .pub-title {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    line-height: 1.4;
+    a {
+      color: $black;
+      text-decoration: none;
+      &:hover {
+        color: $primary-dark;
+        text-decoration: underline;
+      }
+    }
+  }
+  .pub-meta {
+    display: block;
+    font-size: 15px;
+    color: $steel;
+  }
+}
+
+// ---------- Timeline media ----------
+.timeline-media {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+.content .timeline-photo {
+  width: 88px;
+  height: 88px;
+  margin: 0;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.content .timeline-logo {
+  height: 64px;
+  width: auto;
+  margin: 0;
+  padding: 6px 10px;
+  background: #ffffff;
+  border: 1px solid $rule;
+  border-radius: $radius;
+}
+
+// ---------- Governance ----------
+.governance-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+  @include media-breakpoint-up(lg) {
+    grid-template-columns: 7fr 5fr;
+    gap: 56px;
+  }
+  .governance-chart {
+    margin: 0;
+    img {
+      display: block;
+      width: 100%;
+      max-width: 640px;
+      height: auto;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+  .board-list {
+    h2 {
+      margin-top: 0;
+    }
+    ul {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// ---------- Publications ----------
+.pub-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 16px 24px;
+  margin-bottom: 32px;
+  padding: 20px;
+  background: $white-offset;
+  border-radius: $radius;
+  label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $black;
+  }
+  select,
+  input[type="search"] {
+    min-width: 220px;
+    padding: 8px 10px;
+    font: inherit;
+    font-size: 16px;
+    border: 1px solid #c9d1dd;
+    border-radius: $radius;
+    background: #ffffff;
+  }
+  .check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+  .pub-count {
+    margin: 0 0 8px auto;
+    font-size: 15px;
+    color: $steel;
+  }
+}
+.pub-year {
+  margin: 40px 0 0;
+  padding-bottom: 8px;
+  font-family: $font-family-heading;
+  font-size: 26px;
+  font-weight: 600;
+  border-bottom: 2px solid $black;
+}
+.content .pub-entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  > li {
+    margin: 0;
+    padding: 16px 0;
+    border-bottom: 1px solid $rule;
+  }
+  .pub-title {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    line-height: 1.4;
+    a {
+      color: $black;
+      text-decoration: none;
+      &:hover {
+        color: $primary-dark;
+        text-decoration: underline;
+      }
+    }
+  }
+  .pub-authors {
+    display: block;
+    font-size: 15px;
+    line-height: 1.5;
+    color: $steel;
+    b {
+      font-weight: 700;
+      color: $black;
+    }
+  }
+  .pub-meta {
+    display: block;
+    margin-top: 2px;
+    font-size: 15px;
+    color: $steel;
+  }
+  .badge {
+    display: inline-block;
+    margin: 6px 6px 0 0;
+    padding: 2px 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: $primary-dark;
+    background: #e8eefc;
+    border-radius: 999px;
+  }
+  .badge-last {
+    color: #14532d;
+    background: #e3f4e8;
+  }
+}
+.pub-empty {
+  display: none;
+  padding: 24px 0;
+}
+
+// ---------- Reports ----------
+.report-frame {
+  width: 100%;
+  height: 80vh;
+  min-height: 560px;
+  border: 1px solid $rule;
+  border-radius: $radius;
+}
+.empty-state {
+  padding: 40px;
+  text-align: center;
+  background: $white-offset;
+  border-radius: $radius;
+  p {
+    margin: 0;
   }
 }
